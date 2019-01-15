@@ -22,7 +22,7 @@ Route::rule('/admin/search_uname','admin/UserController/search_uname');
 Route::rule('/admin/code','admin/LoginController/code');
 //退出登录
 Route::rule('/admin/logout','admin/LoginController/logout');
-//后台用户管理路由组
+//admin用户管理路由组
 Route::group([],function(){
 //后台首页
 Route::rule('/admin/index','admin/LoginController/index');
@@ -96,7 +96,7 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/ConfigController/'],function(){
 	//网站配置执行修改
 	Route::rule('config_update/:id','update');
 })->middleware('CheckAdmin');
-//前台用户管理路由组
+//user用户管理路由组
 Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 	//前台用户显示页
 	Route::rule('home_index','index');
@@ -113,3 +113,7 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 	//用户回收站
 	Route::get('home_hui','hui');
 })->middleware('CheckAdmin');
+//前台首页管理路由组
+Route::group(['name'=>'/home/','prefix'=>'home/IndexController/'],function(){
+	Route::rule('index','index');
+});
