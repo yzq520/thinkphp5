@@ -1,0 +1,36 @@
+{extend name="default/index"}
+
+{block name="content"}
+    <div class="panel-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form class="form-horizontal form-stripe" method="post" action="/admin/user_updatepwd/{$data->uid}">
+                                        <h6 class="mb-xlg text-center"><b>修改密码</b></h6>
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-2 control-label">用户名</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="uname" id="name" value="{$data->uname}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password3" class="col-sm-2 control-label">原密码</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" name="ypwd" id="password3" placeholder="密码">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password4" class="col-sm-2 control-label">新密码</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" name="pwd" id="password4" placeholder="确认密码">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-primary">提交</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+{/block}

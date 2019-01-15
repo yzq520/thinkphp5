@@ -1,0 +1,80 @@
+{extend name="default/index"}
+
+{block name="content"}
+    <div class="panel-content">
+                            <div class="table-responsive">
+                            <form action="/admin/user_index" method="get">
+                                用户名:<input type="text" name="uname">
+                                <select name="status" id="">
+                                    <option value="1">普通用户</option>
+                                    <option value="2">普通管理员</option>
+                                    <option value="3">超级管理员</option>
+                                </select>
+                                <input type="submit" value="查询">
+                            </form>
+                                <table class="table table-striped table-hover table-bordered text-center">
+                                    <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>用户名</th>
+                                        <th>性别</th>
+                                        <th>状态</th>
+                                        <th>权限</th>
+                                        <th>联系电话</th>
+                                        <th>添加时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {foreach $data as $v}
+                                    <tr>
+                                        <td>{$v['uid']}</td>
+                                        <td>{$v['uname']}</td>
+                                        <td>
+                                            {if $v->sex==0}
+                                            男
+                                            {elseif $v->sex==1}
+                                            女
+                                            {/if}
+                                        </td>
+                                        <td>
+                                            {if $v->zt ==1}
+                                            <span style="color:green">启用</span>
+                                            {elseif $v->zt==2}
+                                            <span style="color:red">禁用</span>
+                                            {/if}
+                                        </td>
+                                        <td>
+                                            {if $v->status==1}
+                                            普通用户
+                                            {elseif $v->status==2}
+                                            <span style="color:blue">普通管理员</span>
+                                            {elseif $v->status==3}
+                                            <span style="color:red">超级管理员</span>
+                                            {/if}
+                                        </td>
+                                        <td>{$v->phone}</td>
+                                        <td>{$v.create_time}</td>
+                                        <td>
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="/admin/user_edit/{$v->uid}" class="btn btn-transparent">修改用户<i class="fa fa-pencil"></i>
+                                                </a>
+                                                <a href="/admin/user_delete/{$v->uid}" class="btn btn-transparent" onclick="return confirm('确定将此记录删除?')">删除用户<i class="fa fa-times"></i>
+                                                </a>
+                                                <a href="/admin/user_editpwd/{$v->uid}" class="btn btn-transparent">修改密码<i class="fa fa-pencil"></i>
+                                                </a>
+                                                    {if $v->zt==1}
+                                                        <a href="/admin/user_jy/{$v->uid}"><span style="color:red">禁用</span></a>
+                                                    {elseif $v->zt==2}
+                                                        <a href="/admin/user_qy/{$v->uid}"><span style="color:green">启用</span></a>
+                                                    {/if}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {/foreach}
+                                    </tbody>
+                                </table>
+                                {:$data->render()}
+                            </div>
+                        </div>
+{/block}
