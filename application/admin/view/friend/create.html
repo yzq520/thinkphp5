@@ -1,0 +1,48 @@
+{extend name="default/index"}
+
+{block name="content"}
+	<div id="content"> <!-- Content start -->
+      <div class="inner_content">
+          <div class="widgets_area">
+                <div class="row-fluid">
+                    <div class="span12">
+                         <div  class="daohanglink">
+                           <span class="daohang"></span>
+                           <span>首页</span><span>></span>
+                           <span>友情管理</span><span>></span>
+                           <span>添加友情</span>
+                           
+                         </div>
+                        <div class="well brown">
+                         <form method="post" action="/admin/friend_save" enctype="multipart/form-data">
+                           <div class="form_list"><label class="lable_title">链接名称</label>
+                           <input class="form_input"  name= "name" type="text"/>
+                            </div>
+                            <div class="form_list"><label class="lable_title">链接地址</label><input class="form_input"  name= "address" type="text"/></div>
+                           
+                             <div class="form_list"><label class="lable_title">图片</label><input class="form_input" name="pic" type="file"/></div>
+                              <div class="form_list"><label class="lable_title">状态</label>
+                            <select style="width:150px; margin-left:15px;" name="zt">
+                              <option value="1">禁用</option>
+                              <option value="2">启用</option>
+                             
+                            </select>
+                            </div>
+                            
+                            
+                            <div class="form_list"><input type="submit" class="submit" value="&nbsp;&nbsp;提&nbsp;&nbsp;交&nbsp;&nbsp;"></div>
+                         </form>   
+                           
+                          
+                        </div>
+                    </div>
+                </div>
+
+            
+            </div>
+        </div>
+    </div>
+
+
+
+{/block}
