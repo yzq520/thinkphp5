@@ -13,13 +13,13 @@ class FlistController extends Controller
      *
      * @return \think\Response
      */
-    public function index()
+    public function index($id)
     {
         $type = Type::select();
         $c = new Cattree($type);
         $type = $c->getTree();
-        dump($type);
-        return view('/flist/index',['type'=>$type]);
+        // dump($type);
+        return view('/flist/index',['type'=>$type,'id'=>$id]);
     }
 
     /**

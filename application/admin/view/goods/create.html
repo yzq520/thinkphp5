@@ -17,7 +17,7 @@
                                             <div class="col-sm-10">
                                                <select name="type_id" id="">
                                                     {foreach $data as $v}
-                                                    <option value="{$v->id}">{:$v->typename}</option>
+                                                    <option {if $v['pid']==0}disabled{/if} value="{$v->id}">{:$v->typename}</option>
                                                     {/foreach}
                                                </select> 
                                             </div>
