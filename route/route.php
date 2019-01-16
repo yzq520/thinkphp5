@@ -101,7 +101,7 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 	//前台用户显示页
 	Route::rule('home_index','index');
 	//删除用户
-	Route::rule('home_delete/:id','delete');
+	Route::rule('home_create','create');
 	//修改用户显示
 	Route::rule('home_edit/:id','edit');
 	//修改用户执行页
@@ -112,4 +112,25 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 	Route::rule('home_qy/:id','qy');
 	//用户回收站
 	Route::get('home_hui','hui');
+})->middleware('CheckAdmin');
+//友情链接管理
+Route::group(['name'=>'/admin/','prefix'=>'admin/FriendController/'],function(){
+	//显示友情链接列表
+	Route::rule('friend_index','index');
+	//显示添加友情链接页面
+	Route::rule('friend_create','create');
+	//执行添加友情链接
+	Route::rule('friend_save','save');
+	//修改用户显示
+	Route::rule('friend_edit/:id','edit');
+	//删除用户
+	Route::rule('friend_delete/:id','delete');
+	//修改用户执行页
+	Route::rule('friend_update/:id','update');
+	//用户禁用
+	Route::rule('friend_jy/:id','jy');
+	//用户启用
+	Route::rule('friend_qy/:id','qy');
+	//用户回收站
+	Route::get('friend_hui','hui');
 })->middleware('CheckAdmin');
