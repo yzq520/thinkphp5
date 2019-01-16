@@ -113,7 +113,7 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 	//用户回收站
 	Route::get('home_hui','hui');
 })->middleware('CheckAdmin');
-//前台首页管理路由组
-Route::group(['name'=>'/home/','prefix'=>'home/IndexController/'],function(){
-	Route::rule('index','index');
-});
+	//前台首页管理
+	Route::rule('/home/index','home/IndexController/index');
+	//前台分类列表页显示
+	Route::rule('/home/flist_index/[:id]','home/FlistController/index');

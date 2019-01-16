@@ -4,12 +4,8 @@ namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
-use app\common\model\Type;
-use app\common\model\Goods;
-use app\common\model\Config;
-use app\tools\Cattree;
 
-class IndexController extends Controller
+class GoodsController extends Controller
 {
     /**
      * 显示资源列表
@@ -18,18 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $config = Config::find();
-        // dump($config);
-        if($config['zt']==2){
-            return view('/index/tishi');
-        }
-        $type = Type::select();
-        $c = new Cattree($type);
-        $type = $c->getTree();
-        // dump($type);
-        $goods = Goods::select();
-        // dump($goods);
-        return view('/index/index',['type'=>$type,'goods'=>$goods,'config'=>$config]);
+        //
     }
 
     /**
