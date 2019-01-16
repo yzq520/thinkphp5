@@ -115,5 +115,5 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 })->middleware('CheckAdmin');
 	//前台首页管理
 	Route::rule('/home/index','home/IndexController/index');
-	//前台分类列表页显示
-	Route::rule('/home/flist_index/[:id]','home/FlistController/index');
+	//前台商品列表页显示
+	Route::rule('/home/goods_index/[:id]','home/GoodsController/index');

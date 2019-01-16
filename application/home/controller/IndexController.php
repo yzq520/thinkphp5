@@ -8,7 +8,6 @@ use app\common\model\Type;
 use app\common\model\Goods;
 use app\common\model\Config;
 use app\tools\Cattree;
-
 class IndexController extends Controller
 {
     /**

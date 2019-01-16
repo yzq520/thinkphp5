@@ -4,7 +4,8 @@ namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
-
+use app\common\model\Type;
+use app\tools\Cattree;
 class GoodsController extends Controller
 {
     /**
@@ -14,7 +15,11 @@ class GoodsController extends Controller
      */
     public function index()
     {
-        //
+        $type = Type::select();
+        $c = new Cattree($type);
+        $type = $c->getTree();
+        dump($type);
+        return view('/goods/index');
     }
 
     /**
