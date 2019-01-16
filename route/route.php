@@ -113,14 +113,17 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 	//用户回收站
 	Route::get('home_hui','hui');
 })->middleware('CheckAdmin');
-
+	//前台路由组
+Route::group([],function(){
 	//前台首页管理
 	Route::rule('/','home/IndexController/index');
 	//前台分类列表页显示
 	Route::rule('/home/flist_index/[:id]','home/FlistController/index');
 	//前台商品列表页显示
-	// Route::rule('/home/goods_index/[:id]','home/GoodsController/index');
-
+	Route::rule('/home/goods_index/[:id]','home/GoodsController/index');
+	//前台用户注册显示页
+	Route::rule('/home/register_index','home/RegisterController/index');
+});
 //友情链接管理
 Route::group(['name'=>'/admin/','prefix'=>'admin/FriendController/'],function(){
 	//显示友情链接列表

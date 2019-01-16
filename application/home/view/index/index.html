@@ -23,7 +23,7 @@
     </p>
     <ul class="head-top-right">
             <li class="login list-item"><a href="login.html" rel="nofollow" class="grade-one">请【登录】</a></li>
-      <li class="login list-item"><a href="register.html"  rel="nofollow" class="grade-one" style="padding-right: 5px"> 【免费注册】</a></li>
+      <li class="login list-item"><a href="/home/register_index"  rel="nofollow" class="grade-one" style="padding-right: 5px"> 【免费注册】</a></li>
       <input type="hidden" name="_csrf" id="_csrf" value="b3c33d40-5de3-4ab7-a0dd-abef38a8626a" />
             <li class="vertical-line"></li>
       <li class="user-box list-item top-hover-box">
@@ -179,7 +179,7 @@
 			{if $val['pid'] == $v['id']}
         <div class="navlist-active-left">
             <dl>
-                <dt><a class="category_s" href="#" target="_blank">{$val['name']}</a></dt>
+                <dt><a class="category_s" href="/home/goods_index/{$val['id']}">{$val['name']}</a></dt>
             </dl>
         </div>
        	 	{/if}

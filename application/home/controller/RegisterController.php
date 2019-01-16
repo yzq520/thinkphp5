@@ -4,21 +4,17 @@ namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
-use app\common\model\Type;
-use app\common\model\Goods;
-use app\tools\Cattree;
-class GoodsController extends Controller
+
+class RegisterController extends Controller
 {
     /**
      * 显示资源列表
      *
      * @return \think\Response
      */
-    public function index($id)
+    public function index()
     {
-        $goods = Goods::where('type_id','=',$id)->select();
-        // dump($goods);
-        return view('/goods/index',['goods'=>$goods]);
+        return view('/register/index');
     }
 
     /**

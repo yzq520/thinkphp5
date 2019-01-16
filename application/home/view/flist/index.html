@@ -30,14 +30,16 @@
                 {foreach $type as $v}
                 {if $v['pid']==$id}
                     <div class="swiper-slide">
+                        <a href="/home/goods_index/{$v['id']}">
                         <div class="slide-holder">
                             <div class="ava">
-                                <img src="/home/flist/images/about1.jpeg" alt="" class="img-responsive">
+                                <img src="/home/flist/images/4k7ynpy2.bmp" alt="" class="img-responsive">
                             </div>
                             <div class="author-wrap">
                                 <span class="name">{$v['name']}</span>
                             </div>
                         </div>
+                        </a>
                     </div>
                 {/if}
                 {/foreach}
