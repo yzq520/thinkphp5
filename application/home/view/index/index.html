@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{$config['name']}</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/home/css/app/reset.css">
+	<link rel="stylesheet" href="/home/css/app/header.css">
+	<link rel="stylesheet" href="/home/css/app/header_banner.css">
+	<link rel="stylesheet" href="/home/css/app/right_sidebar.css">
+	<link rel="stylesheet" href="/home/css/app/footer.css">
+	<link rel="stylesheet" href="/home/css/bin/index.css">
+	<link rel="stylesheet" href="/home/css/jquery.bxslider.css">
+	<link rel="stylesheet" href="/home/fonts/u-fonticon.css">
+</head>
+<body style="overflow:-Scroll;overflow-x:hidden" id="top">
+	<!-- header -->
+	<div class="head-top">
+  <div class="head-wrap">
+    <p class="head-top-left">
+        <span>欢迎来到优分期，更快更好的大学生信用消费平台，憋说话，吻我！</span>
+        <span class="vertical-line"></span>
+       <a href="shoujiyoufenqi.html" target="_blank"><i></i>手机优分期</a>
+    </p>
+    <ul class="head-top-right">
+            <li class="login list-item"><a href="/home/login_login" rel="nofollow" class="grade-one">请【登录】</a></li>
+      <li class="login list-item"><a href="/home/register_index"  rel="nofollow" class="grade-one" style="padding-right: 5px"> 【免费注册】</a></li>
+      <input type="hidden" name="_csrf" id="_csrf" value="b3c33d40-5de3-4ab7-a0dd-abef38a8626a" />
+            <li class="vertical-line"></li>
+      <li class="user-box list-item top-hover-box">
+        <a href="/user/home" class="top-hover-link grade-one">我的优分期<var class="down-arrow icon-iconfont-arrow3"></var></a>
+          <ul class="top-hover">
+            <li class=""><a href="#" rel="nofollow">我的信用</a></li>
+            <li class=""><a href="#" rel="nofollow">我的收藏</a></li>
+            <li class=""><a href="#" rel="nofollow">我是大使</a></li>
+          </ul>
+      </li>
+      <li class="vertical-line"></li>
+      <li class="list-item"><a href="#" rel="nofollow" class="grade-one">我的订单</a></li>
+      <li class="vertical-line"></li>
+      <li class="list-item"><a href="#" rel="nofollow" class="grade-one">我要还款</a></li>
+      <li class="vertical-line"></li>
+      <li class="help-box list-item top-hover-box"><a href="#" rel="nofollow" class="top-hover-link grade-one">帮助中心<var class="down-arrow icon-iconfont-arrow3"></var></a>
+       <ul class="top-hover" id="help_nav_list">
+         <!-- <li><a href="/help/info/help_center#duola" rel="nofollow" target="_blank">哆啦钱包  </a></li> -->
+         <li><a href="#" rel="nofollow" target="_blank">分期说明</a></li>
+         <li><a href="#" rel="nofollow" target="_blank">售后说明</a></li>
+         <li><a href="#" rel="nofollow" target="_blank">信用提现</a></li>
+         <li><a href="#" rel="nofollow" target="_blank">还款说明</a></li>
+         <li><a href="#" rel="nofollow" target="_blank">反欺诈</a></li>
+       </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="top-ad"><a class="top_active_ad" href="#" title=""><img src="/home/images/dingbubanner.jpg" alt=""></a></div>
+  <div id="top-notice"></div>
+<div id="top-ad"></div>
+
+<div class="header-search dib-wrap">
+	<a class="ulogo left" href="/"></a>
+	<div class="search-box left dib">
+		<input type="text" placeholder="搜索您需要的商品" class="dib" id="searchTxtId" name="q" value="">
+		<button class="dib" id="keyWordSearchId">
+			<!-- <i class="icon-search" id="keyWordSearchId"></i> -->
+      搜索
+		</button>
+	</div>
+  <ul class="right header-qq-num">
+    <li class="r-item top-qq">
+      <a href="#" target="_blank">
+        <i></i>在线咨询
+      </a>
+    </li>
+	<li class="r-item tel-num"><i></i>400-081-0707</li>
+    <li class="r-item anti-cheat">
+      <a href="/help/info/fanqizha" target="_blank">
+        <i></i>反欺诈
+      </a>
+    </li>
+	</ul>
+</div>
+
+	<div class="r-sidebar"  id="float_bar" style="display:none;">
+    <div class="rbar-top">
+        <div class="rbar-ad-box">
+        </div>
+        <ul class="rbar">
+            <li class="rbar-item">
+                <a class="rbar-a rbar-app" href="javascript:;">
+                    <i class="rbar-icon"></i>
+                </a>
+                <span class="rbar-img">
+                    <img src="/home/images/rbar-app.png" alt="扫码下载客户端" width="100%"/>
+                    <var class="rbar-arr"></var>
+                </span>
+            </li>
+            <li class="rbar-item">
+                <a class="rbar-a rbar-web"  href="#" target="_blank">
+                    <i class="rbar-icon"></i>
+                </a>
+                <span class="rbar-text">
+                    新浪微博
+                    <var class="rbar-arr"></var>
+                </span>
+            </li>
+            <li class="rbar-item">
+                <a class="rbar-a rbar-wechat" href="javascript:;">
+                    <i class="rbar-icon"></i>
+                </a>
+                <span  class="rbar-img">
+                    <img src="/home/images/rbar-wechat.png" alt="官方微信" width="100%"/>
+                    <span class="rbar-wechat-txt">官方微信</span>
+                    <var class="rbar-arr"></var>
+                </span>
+            </li>
+                </ul>
+    </div>
+    <ul class="rbar-center">
+        <li class="rbar-item">
+            <a class="rbar-a rbar-xuexin" href="#" target="_blank">
+                <i class="rbar-icon"></i>
+            </a>
+            <span class="rbar-text">
+                学信网注册
+                <var class="rbar-arr"></var>
+            </span>
+        </li>
+        <li class="rbar-item">
+            <a class="rbar-a  rbar-qq" href="#" target="_blank"">
+                <i class="rbar-icon"></i>
+            </a>
+             <span class="rbar-text">
+                在线咨询
+                <var class="rbar-arr"></var>
+            </span>
+        </li>
+    </ul>
+    <ul class="rbar-footer">
+        <li class="rbar-item">
+            <a class=" rbar-a rbar-feedback" href="#" target="_blank">
+                <i class="rbar-icon"></i>
+            </a>
+            <span class="rbar-text">
+               意见反馈
+               <var class="rbar-arr"></var>
+           </span>
+        </li>
+        <li class="rbar-item ">
+            <a class="rbar-a rbar-gotop" href="#top" id="to_top">
+                <i class="rbar-icon"></i>
+            </a>
+            <span class="rbar-text">
+                返回顶部
+                <var class="rbar-arr"></var>
+            </span>
+        </li>
+    </ul>
+</div>
+	<div class="header-main">
+		<div class="nav">
+	<div class="main-content u-nav">
+		<div class="nav-list">
+		   <p class="font-size3 font-white">全部分类</p>
+		   <!--分类开始-->
+		   <ul class="navlist-ul" id="top_nav">
+		   {foreach $type as $v}
+		   {if condition="$v['pid'] == 0"}<li>
+    <div class="navlist-li-cover" data-navid="1">
+        <img src="/home/images/navicon1508052010559940003.png" class="navlist-li-icon ">
+        <span class="nalist-li-span">
+            <a href="/home/flist_index/{$v['id']}" class="navlist-li-a">{$v['name']}<span>/</span></a>
+        </span>
+        <span class="arrow-r"></span>
+        <span class="arrow-l"></span>
+    </div>
+    <div class="navlist-active" style="top: 0px;">
+    		{foreach $type as $val}
+			{if $val['pid'] == $v['id']}
+        <div class="navlist-active-left">
+            <dl>
+                <dt><a class="category_s" href="/home/goods_index/{$val['id']}">{$val['name']}</a></dt>
+            </dl>
+        </div>
+       	 	{/if}
+			{/foreach}
+    </div>
+</li>
+	{/if}
+	{/foreach}
+</ul>
+<!--分类结束-->
+		</div>
+		<div class="nav-title font-size2">
+		   <ul>
+		   	   <li><a href="index.html">首页</a></li>
+		   	   <li><a href="benzhoutemai.html" target="_blank">本周热卖</a></li>
+		   	   <li><a href="ujijin.html" target="_blank">U基金</a></li>
+		   	   <li><a href="doraemon.html" target="_blank">哆啦钱包</a></li>
+		   </ul>	
+		</div>
+		<a href="/user/home" class="nav-myu">
+			<i class="icon-- inline-block"></i>
+			<span class="font-size2 font-white">我的优分期</span>
+		</a>
+		<div class="nav-renzheng" style="z-index:2;">
+				<a href="index.html" target="_blank" class="nav-box"> 
+					<img src="/home/images/banneryouce120150602.png" /> 
+				</a>
+				<a href="index.html" target="_blank" class="nav-box"> 
+					<img src="/home/images/indexbanner1510311756565030000.png" /> 
+				</a>
+		</div>
+	</div>
+</div>
+		<div class="ufenqi-banner">
+	<div class="u-banner">
+	   <ul class="bxslider banner-list" style="z-index:1;">
+	   	   	   <li style="background:#00deff;" class="active">
+	   	   		<a href="cms/active/iphone6s-pc" target="_blank" class="main-content" title=""><img src="/home/images/indexbanner1603281855450690001.jpg"></a>
+	   	   </li>
+	   	   	   <li style="background:#0b0437;">
+	   	   		<a href="images/main_pc.html" target="_blank" class="main-content" title=""><img src="/home/images/indexbanner1602292034123860003.jpg"></a>
+	   	   </li>
+	   	   	   <li style="background:#8000bf;">
+	   	   		<a href="cms/active/0301_main" target="_blank" class="main-content" title=""><img src="/home/images/indexbanner1603111535203220000.jpg"></a>
+	   	   </li>
+	   	   	   <li style="background:#ee5243;">
+	   	   		<a href="cms/active/shuma0328-pc" target="_blank" class="main-content" title=""><img src="/home/images/indexbanner1603281655074440000.jpg"></a>
+	   	   </li>
+	   	   	   <li style="background:#34bfff;">
+	   	   		<a href="cms/active/hongji0301-pc" target="_blank" class="main-content" title=""><img src="/home/images/indexbanner1603141726321690000.jpg"></a>
+	   	   </li>
+	   	   </ul>
+		   <ol class="slider">
+				<li></li>
+		   </ol>
+	</div>
+</div>	</div>
+	<!-- end header -->						
+		<section class="unew">
+		<div class="unew-h1">
+		</div>
+			<div class="unew-box">
+					<ul class="slider-container" style="width:1260px">
+						{foreach $goods as $v}
+						<li class="unew-li">
+								<a target="_blank" class="unewli-box" href="/items/detail/28437?hmsr=h" title="【赠自拍杆】小米4S  全网通手机 金">
+									<div class="unewli-img"><img src="/photo/{$v['pic']}" /></div> 
+				     	       	   	<h2 class="font-ublack font-title">
+				     	       	   		{$v['name']}
+				     	       	   	</h2>
+				     	       	   	<p class="price-box">
+				     	       	   	  	<span class="font-red font-size3">￥</span>
+				     	       	   	  	<span class="font-red font-size8">{$v['price']}</span>
+				     	       	   	  	<span class="tag-notice">
+											<var class="tag-icon"></var>
+											<i class="tag-icon-1" id="saleIcon">5折服务费</i>
+										</span>
+				     	       </a>
+		     	   		</li>
+		     	   		{/foreach}
+		     	</ul>
+			</div>
+		</section>
+		<!--品牌推荐-->
+		<!--友情链接-->
+		<section class="u-link">
+			<div class="uLink-box">
+				<p class="font3 font-size5">
+					友情链接<span>/Links</span>
+				</p>
+				<ul class="link-list">
+				{foreach $friend as $f}
+					<li><a href="{$f->address}">{$f->name}</a></li>
+					<li><img src="/photo/{$f->pic}" alt="" width="50px"></li>
+				{/foreach}
+					
+				</ul>
+				
+			</div>
+		</section>
+	</div>
+	<!-- end content -->
+	<!-- footer -->
+	<footer class="ft-wrap">
+		<div class="ft-main-box">
+		
+<ul class="ft-main">
+	<li class="left">
+		<strong class="block">分期说明</strong>
+		<a href="#" rel="nofollow" target="_blank">分期购物</a>
+	<li class="left">
+		<strong class="block">售后说明</strong>
+		<a href="#" rel="nofollow" target="_blank">退换货说明</a>
+		<a href="#" rel="nofollow" target="_blank">品牌真伪查询</a>
+
+	</li>
+	<li class="left">
+		<strong class="block">信用提现</strong>
+		<a href="#" rel="nofollow" target="_blank">提现（U基金）</a>
+	</li>
+	<li class="left">
+		<strong class="block">关于优分期</strong>
+		<a href="#" rel="nofollow" target="_blank">关于我们</a>
+		<a href="#" rel="nofollow" target="_blank">联系我们</a>
+		<a href="#" rel="nofollow" target="_blank">牛人加入</a>
+		<a href="#" rel="nofollow" target="_blank">校园招聘</a>
+	</li>
+	<li class="left ft-phoneapp">
+		<strong class="block">手机优分期</strong>
+		<a href="#" target="_blank" class="app-h5">http://www.17sucai.com/</a>
+		<a href="#" target="_blank" class="ft-btn app app-ios">iPhone</a>
+		<a href="/app/" target="_blank" class="ft-btn app app-android">Android</a>
+	</li>
+	<li class="left ft-mobile">
+		<p><strong>400-081-0707</strong>
+			</br>周一至周日9：00-22：00</p>
+		<a href="#" target="_blank" class="ft-btn ft-customer">在线客服</a>
+	</li>
+</ul>			<div class="ft-copyright">
+		<ul class="ft-safety">
+			<li id="kx_verify" class="safety-1"><a href="#" target="_blank"></a></li>
+			<li class="safety-2">
+				<a href="#" target="_blank"></a>
+			</li>
+			<li class="safety-3">
+				<a href="#" target="_blank"></a>
+			</li>
+			<li class="safety-4">
+				<a href="#" target="_blank"></a>
+			</li>
+		</ul>
+		<div class="footer-info" >
+			<p>北京市公安局朝阳分局备案编号11010802015956|<a href="#" target="_blank">京ICP证备14020586号</a>|<a href="images/businessLicence.jpg" target="_blank">营业执照号：110108016963882</a>|<a href="javascript:void(0);" target="_blank">食品流通许可证号：SP1101081510244633</a> </p>
+			<p>京海食药监械经营许20150358号 | 京海食药监械经营备20150440号</p>
+			<p>公司名称：北京和创未来网络科技有限公司|公司地址：北京市海淀区上地东路5号院京蒙高科A座6层|联系方式：400-081-0707</p>
+			<p>{$config['bq']}</p>
+		</div>
+	</div>
+		</div>
+	</footer>
+	<script src="/home/js/jquery-1.11.1.min.js"></script>
+	<script src="/home/js/jquery.hoverdir.js"></script>
+	<script src="/home/js/app.js"></script>
+</body>
+</html>
+
