@@ -101,17 +101,7 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 	//前台用户显示页
 	Route::rule('home_index','index');
 	//删除用户
-	Route::rule('home_create','create');
-	//修改用户显示
-	Route::rule('home_edit/:id','edit');
-	//修改用户执行页
-	Route::rule('home_update/:id','update');
-	//用户禁用
-	Route::rule('home_jy/:id','jy');
-	//用户启用
-	Route::rule('home_qy/:id','qy');
-	//用户回收站
-	Route::get('home_hui','hui');
+	Route::rule('home_delete/:id','delete');
 })->middleware('CheckAdmin');
 	//前台路由组
 Route::group([],function(){
@@ -129,6 +119,16 @@ Route::group([],function(){
 	Route::rule('/home/cart_add/:id','home/CartController/add');
 	//前台用户注册显示页
 	Route::rule('/home/register_index','home/RegisterController/index');
+	//用户注册执行
+	Route::rule('/home/register_save','home/RegisterController/save');
+	//用户登录页
+	Route::rule('/home/login_index','home/LoginController/index');
+	//后台登录执行
+	Route::rule('/home/do_login','home/LoginController/do_login');
+	// //显示验证码
+	Route::rule('/home/code','home/LoginController/code');
+	// //退出登录
+	Route::rule('/home/logout','home/LoginController/logout');
 });
 //友情链接管理
 Route::group(['name'=>'/admin/','prefix'=>'admin/FriendController/'],function(){

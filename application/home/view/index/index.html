@@ -22,12 +22,25 @@
        <a href="shoujiyoufenqi.html" target="_blank"><i></i>手机优分期</a>
     </p>
     <ul class="head-top-right">
-            <li class="login list-item"><a href="/home/login_login" rel="nofollow" class="grade-one">请【登录】</a></li>
-      <li class="login list-item"><a href="/home/register_index"  rel="nofollow" class="grade-one" style="padding-right: 5px"> 【免费注册】</a></li>
+		{if empty(session('loginHome'))}
+            <li class="login list-item">
+            	<a href="/home/login_index" rel="nofollow" class="grade-one">请【登录】</a>
+            </li>
+      		<li class="login list-item">
+      			<a href="/home/register_index"  rel="nofollow" class="grade-one" style="padding-right: 5px"> 【免费注册】</a>
+      		</li>
+		{else}
+			<li class="login list-item">
+            	<a href="/home/login_index" rel="nofollow" class="grade-one" style="color:blue">【{:session('users.name')}】</a>
+            </li>
+      		<li class="login list-item">
+      			<a href="/home/logout"  rel="nofollow" class="grade-one" style="padding-right:5px;color:blue">【退出登录】</a>
+      		</li>
+		{/if}
       <input type="hidden" name="_csrf" id="_csrf" value="b3c33d40-5de3-4ab7-a0dd-abef38a8626a" />
             <li class="vertical-line"></li>
       <li class="user-box list-item top-hover-box">
-        <a href="/user/home" class="top-hover-link grade-one">我的优分期<var class="down-arrow icon-iconfont-arrow3"></var></a>
+        <a href="/user/home" class="top-hover-link grade-one">我的优分期</a>
           <ul class="top-hover">
             <li class=""><a href="#" rel="nofollow">我的信用</a></li>
             <li class=""><a href="#" rel="nofollow">我的收藏</a></li>
@@ -39,7 +52,7 @@
       <li class="vertical-line"></li>
       <li class="list-item"><a href="#" rel="nofollow" class="grade-one">我要还款</a></li>
       <li class="vertical-line"></li>
-      <li class="help-box list-item top-hover-box"><a href="#" rel="nofollow" class="top-hover-link grade-one">帮助中心<var class="down-arrow icon-iconfont-arrow3"></var></a>
+      <li class="help-box list-item top-hover-box"><a href="#" rel="nofollow" class="top-hover-link grade-one">帮助中心</a>
        <ul class="top-hover" id="help_nav_list">
          <!-- <li><a href="/help/info/help_center#duola" rel="nofollow" target="_blank">哆啦钱包  </a></li> -->
          <li><a href="#" rel="nofollow" target="_blank">分期说明</a></li>

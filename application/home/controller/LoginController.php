@@ -1,10 +1,10 @@
 <?php
 
-namespace app\admin\controller;
+namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
-use app\common\model\User;
+use app\common\model\Register;
 use think\captcha\Captcha;
 
 class LoginController extends Controller
@@ -16,7 +16,9 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('default/index');
+
+        return view('/login/index');
+
     }
 
     /**
@@ -63,6 +65,17 @@ class LoginController extends Controller
     }
 
     /**
+     * 保存更新的资源
+     *
+     * @param  \think\Request  $request
+     * @param  int  $id
+     * @return \think\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+     /**
      * 退出登录
      *
      * @param  \think\Request  $request
@@ -71,8 +84,9 @@ class LoginController extends Controller
      */
     public function logout()
     {
-        session('loginAdmin',false);
-        return $this->error('正在退出中....','/home/login');
+
+        session('loginHome',false);
+        return $this->error('正在退出中....','/');
     }
 
     /**
@@ -102,20 +116,20 @@ class LoginController extends Controller
         $captcha = new Captcha();
         if(!$captcha->check($code))
         {
-            return $this->error('验证码不正确','/home/login');
+            return $this->error('验证码不正确','/home/login_index');
         }
-        $uname = $data['uname'];
+        $name = $data['name'];
         $pwd = $req->post('pwd',null,'md5');
         // $data['pwd'] = md5($data['pwd']);
-        $res = User::where('uname','=',$uname)->where('pwd','=',$pwd)->find();
+        $res = Register::where('name','=',$name)->where('pwd','=',$pwd)->find();
         if(empty($res)){
-            return $this->error('密码错误','/home/login');
+            return $this->error('密码错误','/home/login_index');
         }
             //保存一个数据用来验证用户是否登录
-            session('loginAdmin',true);
+            session('loginHome',true);
             //保存(session)登录用户信息
             session('users',$res);
-            return $this->success('登录成功','/home/index');
+            return $this->success('登录成功','/');
     }
     /**
      * 显示验证码

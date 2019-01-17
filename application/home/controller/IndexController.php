@@ -29,7 +29,7 @@ class IndexController extends Controller
         $type = $c->getTree();
         // dump($type);
         $goods = Goods::select();
-          $friend = Friend::select();
+        $friend = Friend::select();
         // dump($goods);
         return view('/index/index',['type'=>$type,'goods'=>$goods,'config'=>$config,'friend'=>$friend]);
     }
