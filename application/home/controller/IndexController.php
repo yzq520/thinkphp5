@@ -8,6 +8,8 @@ use app\common\model\Type;
 use app\common\model\Goods;
 use app\common\model\Config;
 use app\tools\Cattree;
+use app\common\model\Friend;
+
 class IndexController extends Controller
 {
     /**
@@ -27,8 +29,9 @@ class IndexController extends Controller
         $type = $c->getTree();
         // dump($type);
         $goods = Goods::select();
+          $friend = Friend::select();
         // dump($goods);
-        return view('/index/index',['type'=>$type,'goods'=>$goods,'config'=>$config]);
+        return view('/index/index',['type'=>$type,'goods'=>$goods,'config'=>$config,'friend'=>$friend]);
     }
 
     /**

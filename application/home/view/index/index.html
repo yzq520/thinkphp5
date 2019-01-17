@@ -1445,14 +1445,13 @@
 					友情链接<span>/Links</span>
 				</p>
 				<ul class="link-list">
-					<li><a href="#" target="_blank" class="borderLeft">pc6官方下载</a></li>
-					<li><a href="#" target="_blank">9号下载</a></li>
-					<li><a href="#" target="_blank">7230下载</a></li>
-					<li><a href="#" target="_blank">shouji56</a></li>
-					<li><a href="#" target="_blank">统一手机站</a></li>
-					<li><a href="#" target="_blank">西西软件园</a></li>
-					<li><a href="#" target="_blank">当下软件园</a></li>
+				{foreach $friend as $f}
+					<li><a href="{$f->address}">{$f->name}</a></li>
+					<li><img src="/photo/{$f->pic}" alt="" width="50px"></li>
+				{/foreach}
+					
 				</ul>
+				
 			</div>
 		</section>
 	</div>
