@@ -49,7 +49,7 @@
                             <div class="tab-item">
                                 <div class="aui-shop-list aui-shop-list-selected">
                                     {foreach $goods as $v}
-                                    <a href="javascript:;" class="aui-shop-list-item">
+                                    <a href="" class="aui-shop-list-item">
                                         <div class="aui-shop-list-item-hd">
                                             <img src="/photo/{$v['pic']}" alt="">
                                             <span class="aui-shop-list-item-tag">特价</span>
@@ -57,7 +57,7 @@
                                         <div class="aui-shop-list-item-bd">
                                             <h3><span style="color:red">{$v['name']}</span><span  style="color:blue">-----</span>{$v['content']}</h3>
                                             <p class="aui-special-etc">
-                                                <span class="aui-special-etc-hd">{$v['price']}￥</span>
+                                                <span style="margin-left:-360px" class="aui-special-etc-hd">{$v['price']}￥</span>
                                             </p>
                                         </div>
                                     </a>

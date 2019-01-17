@@ -4,6 +4,7 @@ namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
+use app\common\model\Register;
 
 class RegisterController extends Controller
 {
@@ -35,7 +36,21 @@ class RegisterController extends Controller
      */
     public function save(Request $request)
     {
-        //
+         $data = $request->post();
+        // dump($data);die;
+        if(empty($data['pwd'])){
+            return $this->error('密码不能为空');
+        }else if($data['pwd']!=$data['repwd']){
+            return $this->error('密码不一致');
+        }else if(empty($data['name'])){
+            return $this->error('用户名不能为空');
+        }
+        try{
+            Register::create($data,true);
+        }catch(\Exteption $e){
+            return $this->error('注册失败');
+        }
+            return $this->success('注册成功','/home/login_index');
     }
 
     /**

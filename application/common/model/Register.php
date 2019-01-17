@@ -10,4 +10,8 @@ class Register extends Model
     protected $table = 'data_user';
     //主键
     protected $pk = 'id';
+    //修改器
+    public function setPwdAttr($v){
+    	return md5($v);
+    }
 }

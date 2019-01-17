@@ -13,9 +13,7 @@
 			<a class="ulogo" href="/"></a>
 			<div id="tip-float" class="tip-float">已有优分期帐户？<a href="login.html" class="btn-login">直接登录</a></div>
 		</h1>
-		<form method="post" name="form" id="loginForm" >
-			<input id="_csrf" data-check="yes" type="hidden" name="_csrf" value="b1a7fbd7-84ad-4b9c-9e93-6bf75f9c624f">
-			<input name="j_token" data-check="yes" type="hidden" id="j_token" value="1459342875763">
+		<form method="post" action="/home/register_save" name="form" id="loginForm" >
 			<input type="hidden" id="errorcount" value="" data-value="">
 			<input type="hidden" id="login_failure_name" value="">
 			<div class="content" id="ejs_container">
@@ -26,23 +24,18 @@
 	
 		<div class=" dib-wrap lh-37 ">
 			<label for="" class="dib">用户名</label>
-			<input name="userName" id="userName" type="text" data-check="yes" data-exp="void-m" placeholder="用户名" class="dib">
+			<input name="name" id="name" type="text" data-check="yes" data-exp="void-m" placeholder="用户名" class="dib">
 			<i class="icon_tips"></i><p class="errInfo_register"></p>
 		</div>
 		<div class=" dib-wrap ">
 			<label for="" class="dib">创建密码</label>
-			<input name="passWord" id="passWord" type="password" data-check="yes" data-exp="void-pwd-passWord2" placeholder="请输入密码" class="dib">
+			<input name="pwd" id="pwd" type="password" data-check="yes" data-exp="void-pwd-passWord2" placeholder="请输入密码" class="dib">
 			<i class="icon_tips"></i><p class="errInfo_register"></p>
 		</div>
 		<div class=" dib-wrap ">
 			<label for="" class="dib">确认密码</label>
-			<input id="passWord2" name="passWord2" type="password" data-exp="void-pwd-passWord" placeholder="请再次输入密码" class="dib">
+			<input id="repwd" name="repwd" type="password" data-exp="void-pwd-passWord" placeholder="请再次输入密码" class="dib">
 			<i class="icon_tips"></i><p class="errInfo_register"></p>
-		</div>
-		<div class=" dib-wrap ">
-			<label for="" class="dib">验证码</label>
-			<input id="validateCode" name="validateCode" type="text" data-check="yes" data-exp="void-" class="dib">
-			<img id="validateImage" src="images/code.png">
 		</div>
 		<div class="dib-wrap check-box">
 			<label class="dib">&nbsp;</label>

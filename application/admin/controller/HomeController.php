@@ -4,7 +4,7 @@ namespace app\admin\controller;
 
 use think\Controller;
 use think\Request;
-use app\common\model\Home;
+use app\common\model\Register;
 
 class HomeController extends Controller
 {
@@ -19,11 +19,7 @@ class HomeController extends Controller
         if(!empty($_GET['name'])){
             $search[] = ['name','like',"%{$_GET['name']}%"];
         }
-        $search[] = ['zt','=','1'];
-        if(!empty($_GET['dj'])){
-            $search[] = ['dj','=',"{$_GET['dj']}"];
-        }
-        $data = Home::where($search)->paginate(5)->appends($_GET);
+        $data = Register::where($search)->paginate(5)->appends($_GET);
         return view('/home/index',['data'=>$data]);
     }
 
@@ -67,8 +63,7 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        $data = Home::find($id);
-        return view('/home/edit',['data'=>$data]);
+        // 
     }
 
     /**
@@ -80,13 +75,7 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->post();
-        try {
-            Home::update($data,['id'=>$id]);
-        } catch(\Exception $e){
-            return $this->error('修改失败','/admin/home_edit');
-        }
-            return $this->success('修改成功','/admin/home_index');
+       //
     }
 
     /**
@@ -98,52 +87,11 @@ class HomeController extends Controller
     public function delete($id)
     {
         try {
-            $data = Home::destroy($id);
+            $data = Register::destroy($id);
         }catch(\Exception $e){
             return $this->error('删除失败','/admin/home_index');
         }
             return $this->success('删除成功','/admin/home_index');
     }
-    /**
-     * 禁用
-     */
-    public function jy($id)
-    {
-        // dump($id);
-        // die;
-        try {
-           Home::update(['zt'=>'2'],['id'=>$id]); 
-        }catch(\Exception $e){
-            return $this->error('禁用失败');
-        }
-            return redirect('/admin/home_hui');
-    }
-    /**
-     * 启用
-     */
-    public function qy($id)
-    {
-       try {
-           Home::update(['zt'=>'1'],['id'=>$id]); 
-        }catch(\Exception $e){
-            return $this->error('启用失败');
-        }
-            return redirect('/admin/home_index');
-    }
-    /**
-     * 用户回收站显示
-     */
-    public function hui()
-    {
-        $search = [];
-        if(!empty($_GET['name'])){
-            $search[] = ['name','like',"%{$_GET['name']}%"];
-        }
-        $search[] = ['zt','=','2'];
-        if(!empty($_GET['dj'])){
-            $search[] = ['dj','=',"{$_GET['dj']}"];
-        }
-        $data = Home::where($search)->paginate(4)->appends($_GET);
-        return view('/home/hui',['data'=>$data]);
-    }
+   
 }
