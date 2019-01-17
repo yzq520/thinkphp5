@@ -50,7 +50,11 @@ class GoodsController extends Controller
      */
     public function read($id)
     {
-        //
+        //根据id获取商品信息
+        $goods = Goods::find($id);
+        // dump($goods);die;
+        //显示到页面
+        return view('/goods/read',['goods'=>$goods]);
     }
 
     /**

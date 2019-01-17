@@ -115,12 +115,18 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 })->middleware('CheckAdmin');
 	//前台路由组
 Route::group([],function(){
+	//前台太登录显示页
+	Route::rule('/home/login','home/LoginController/login');
 	//前台首页管理
 	Route::rule('/','home/IndexController/index');
 	//前台分类列表页显示
 	Route::rule('/home/flist_index/[:id]','home/FlistController/index');
 	//前台商品列表页显示
 	Route::rule('/home/goods_index/[:id]','home/GoodsController/index');
+	//商品详情页
+	Route::rule('/home/goods_read/:id','home/GoodsController/read');
+	//购物车
+	Route::rule('/home/cart_add/:id','home/CartController/add');
 	//前台用户注册显示页
 	Route::rule('/home/register_index','home/RegisterController/index');
 });
@@ -145,4 +151,5 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/FriendController/'],function(){
 	//用户回收站
 	Route::get('friend_hui','hui');
 })->middleware('CheckAdmin');
+
 
