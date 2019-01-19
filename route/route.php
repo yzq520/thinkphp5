@@ -129,6 +129,22 @@ Route::group([],function(){
 	Route::rule('/home/code','home/LoginController/code');
 	// //退出登录
 	Route::rule('/home/logout','home/LoginController/logout');
+	//添加购物车
+	Route::rule('/home/cart_add/:id','home/CartController/add');
+	//显示购物车列表页
+	Route::rule('/home/cart_index','home/CartController/index');
+	//删除购物车商品
+	Route::rule('/home/cart_delete/:id','home/CartController/delete');
+	//购物车数量加减
+	Route::rule('/home/num/:id','home/CartController/num');
+	//结算购物车
+	Route::rule('/home/js_cart','home/CartController/js');
+	//订单提交
+	Route::rule('/home/order_save','home/OrderController/save');
+	//存储订单
+	Route::rule('/home/order_create','home/OrderController/create');
+	//显示订单
+	Route::rule('/home/order_index','home/OrderController/index');
 });
 //友情链接管理
 Route::group(['name'=>'/admin/','prefix'=>'admin/FriendController/'],function(){

@@ -18,8 +18,8 @@ class GoodsController extends Controller
     public function index()
     {
          $search = [];
-        if(!empty($_GET['name'])){
-            $search[] = ['name','like',"%{$_GET['name']}%"];
+        if(!empty($_GET['gname'])){
+            $search[] = ['gname','like',"%{$_GET['gname']}%"];
         }
         if(!empty($_GET['status'])){
             $search[] = ['status','=',"{$_GET['status']}"];

@@ -40,12 +40,7 @@
       <input type="hidden" name="_csrf" id="_csrf" value="b3c33d40-5de3-4ab7-a0dd-abef38a8626a" />
             <li class="vertical-line"></li>
       <li class="user-box list-item top-hover-box">
-        <a href="/user/home" class="top-hover-link grade-one">我的优分期</a>
-          <ul class="top-hover">
-            <li class=""><a href="#" rel="nofollow">我的信用</a></li>
-            <li class=""><a href="#" rel="nofollow">我的收藏</a></li>
-            <li class=""><a href="#" rel="nofollow">我是大使</a></li>
-          </ul>
+        <a href="/home/cart_index" class="top-hover-link grade-one">我的购物车</a>
       </li>
       <li class="vertical-line"></li>
       <li class="list-item"><a href="#" rel="nofollow" class="grade-one">我的订单</a></li>
@@ -258,10 +253,10 @@
 					<ul class="slider-container" style="width:1260px">
 						{foreach $goods as $v}
 						<li class="unew-li">
-								<a target="_blank" class="unewli-box" href="/items/detail/28437?hmsr=h" title="【赠自拍杆】小米4S  全网通手机 金">
+								<a class="unewli-box" href="/home/goods_read/{$v->id}" >
 									<div class="unewli-img"><img src="/photo/{$v['pic']}" /></div> 
 				     	       	   	<h2 class="font-ublack font-title">
-				     	       	   		{$v['name']}
+				     	       	   		{$v['gname']}
 				     	       	   	</h2>
 				     	       	   	<p class="price-box">
 				     	       	   	  	<span class="font-red font-size3">￥</span>

@@ -51,7 +51,20 @@
 			
 			});
 		
-			
+		  $(".Xcontent33").click(function(){
+                var value=parseInt($('.input').val())+1;
+                $('.input').val(value);
+            })
+
+
+            $(".Xcontent32").click(function(){
+                var num = $(".input").val()
+                if(num>1){
+                    $(".input").val(num-1);
+                }
+
+
+            })	
 });
 	
 			
@@ -106,7 +119,7 @@
    
 
     <div class="centerbox">
-    	<p class="imgname">{$goods['name']}</p>
+    	<p class="imgname">{$goods['gname']}</p>
     	<p class="Aprice">价格：<samp>￥{$goods['price']}</samp></p>
     	<p class="price">促销价：<samp>￥{$goods['price']}</samp></p>
     	<p class="youhui">产品简介：<samp>{$goods['content']}</samp></p>
@@ -118,9 +131,22 @@
         </ul>
         <div class="clear"></div>
         <p class="chima">尺码：</p>
-        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="#">加入购物车</a></p>
-   		<div class="clear"></div>
-        <div class="fenx"><a href="#"><img src="/home/xq/images/shopdetail/tell07.png"></a></div>
+        <div class="Xcontent30">
+				<p class="Xcontent31">数量</p>
+				<!-- //减 -->
+				<div class="Xcontent32" style="margin-left:50px;margin-top:-28px">
+					<img src="/home/images/X15.png">
+				</div>
+				<form action="/home/cart_add/{$goods->id}" method="post">
+					<input class="input" name="num" value="1" style="margin-left:90px;width:60px;height:30px;margin-top:-35px;position:absolute">
+					<input type="submit" value="加入购物车" id="sub" style="margin-top:10px;width:100px;height:30px;margin-left:60px;background-color:#27DCCF">
+				</form>
+				<!-- //加 -->
+				<div class="Xcontent33" style="margin-left:155px;margin-top:-75px;">
+					<img src="/home/images/16.png">
+				</div>
+		</div>
+        <div class="fenx" style="margin-top:50px"><a href="#"><img src="/home/xq/images/shopdetail/tell07.png"></a></div>
         <p class="fuwu">服务承诺：</p>
         <p class="pay">支付方式：</p>
     </div>
