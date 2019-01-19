@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>天天生鲜-用户中心</title>
+    <link rel="stylesheet" type="text/css" href="/home/pre/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/home/pre/css/main.css">
+</head>
+<body>
+    <div class="search_bar clearfix">
+        <a href="index.php?c=index&a=index"" class="logo fl"><img src="/home/pre/images/logo.gif"></a>   
+    </div>
+
+
+    <div class="main_con clearfix">
+        <div class="left_menu_con clearfix">
+            <h3>用户中心</h3>
+            
+                
+            <ul>
+                <li><a href="/home/per_password/{$sess['id']}">· 修改密码</a></li>
+                <li><a href="" class="active">· 个人信息</a></li>
+            </ul>
+        </div>
+        <div class="right_content clearfix">
+                <div class="info_con clearfix">
+                <h3 class="common_title2">用户基本信息</h3>
+                <form action="/home/per_save/{:session('users.id')}" method="post" enctype="multipart/form-data">
+                        <ul class="user_info_list">
+                        {foreach $data as $v}
+                            <li>用户名:<input type="text" name="infoname" value="{:session('users.name')}"/></li>
+                            <li><label >用户性别：</label>
+                            <input type="radio" name="sex" {if $v->sex==0}checked{/if} value="0"/>男
+                            <input type="radio" name="sex" {if $v->sex==1}checked{/if} value="1"/>女
+                            <input type="radio" name="sex" {if $v->sex==2}checked{/if} value="2"/>保密
+                            </li>
+                            <li>年龄:<input type="text" name="age" value="{$v['age']}"/></li>
+                            <li>联系电话:<input type="text" name="phone" value="{$v['phone']}"/></li>
+                            <li>爱好:<input type="text" name="aihao" value="{$v['aihao']}"/></li>
+                            <li>邮箱:<input type="email" name="email" value="{$v['email']}"/></li>   
+                        <div style="margin-left:60px">
+                            <input type="submit" value="提交"/>
+                            <input type="reset" value="重置"/>            
+                        </div>
+                        {/foreach}
+                        </ul>
+                </form>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="footer">
+        <div class="foot_link">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">联系我们</a>
+            <span>|</span>
+            <a href="#">招聘人才</a>
+            <span>|</span>
+            <a href="#">友情链接</a>        
+        </div>
+        <p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+        <p>电话：010-****888    京ICP备*******8号</p>
+    </div>
+    
+</body>
+</html>

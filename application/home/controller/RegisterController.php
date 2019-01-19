@@ -5,6 +5,8 @@ namespace app\home\controller;
 use think\Controller;
 use think\Request;
 use app\common\model\Register;
+use app\common\model\Per;
+
 
 class RegisterController extends Controller
 {
@@ -46,10 +48,16 @@ class RegisterController extends Controller
             return $this->error('用户名不能为空');
         }
         try{
-            Register::create($data,true);
+           $data=Register::create($data,true);
+
+           $per['uid']=$data['id'];
+           Per::create($per,true);
+           
         }catch(\Exteption $e){
             return $this->error('注册失败');
         }
+
+            
             return $this->success('注册成功','/home/login_index');
     }
 

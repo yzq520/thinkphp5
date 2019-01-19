@@ -105,7 +105,7 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/HomeController/'],function(){
 })->middleware('CheckAdmin');
 	//前台路由组
 Route::group([],function(){
-	//前台太登录显示页
+	//前台登录显示页
 	Route::rule('/home/login','home/LoginController/login');
 	//前台首页管理
 	Route::rule('/','home/IndexController/index');
@@ -115,20 +115,31 @@ Route::group([],function(){
 	Route::rule('/home/goods_index/[:id]','home/GoodsController/index');
 	//商品详情页
 	Route::rule('/home/goods_read/:id','home/GoodsController/read');
-	//购物车
-	Route::rule('/home/cart_add/:id','home/CartController/add');
 	//前台用户注册显示页
 	Route::rule('/home/register_index','home/RegisterController/index');
 	//用户注册执行
 	Route::rule('/home/register_save','home/RegisterController/save');
 	//用户登录页
 	Route::rule('/home/login_index','home/LoginController/index');
-	//后台登录执行
+	//用户登录执行
 	Route::rule('/home/do_login','home/LoginController/do_login');
-	// //显示验证码
+	//显示验证码
 	Route::rule('/home/code','home/LoginController/code');
 	// //退出登录
 	Route::rule('/home/logout','home/LoginController/logout');
+	// 个人中心
+	Route::rule('/home/per_index','home/PerController/index');
+	// 个人中心添加信息
+	Route::rule('/home/per_save/:id','home/PerController/save');
+	// 显示个人中心修改信息
+	Route::rule('/home/per_edit/:id','home/PerController/edit');
+	// 个人中心修改信息
+	Route::rule('/home/per_update/:id','home/PerController/update');
+	//个人中心修改密码
+	Route::rule('/home/per_dopwd/:id','home/PerController/dopwd');
+	//修改密码页面
+	Route::rule('/home/per_password/:id','home/PerController/passwoed');
+	//
 });
 //友情链接管理
 Route::group(['name'=>'/admin/','prefix'=>'admin/FriendController/'],function(){
@@ -151,5 +162,16 @@ Route::group(['name'=>'/admin/','prefix'=>'admin/FriendController/'],function(){
 	//用户回收站
 	Route::get('friend_hui','hui');
 })->middleware('CheckAdmin');
+//后台订单管理
+Route::group(['name'=>'/admin/','prefix'=>'admin/OrderController/'],function(){
+	//显示订单页面
+	Route::rule('order_index','index');
+	
+	//修改订单
+	Route::rule('order_edit/:id','edit');
+	//执行修改网站配置
+	Route::rule('order_update/:id','update');
+	
+});
 
 

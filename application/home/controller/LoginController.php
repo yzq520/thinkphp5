@@ -86,7 +86,7 @@ class LoginController extends Controller
     {
 
         session('loginHome',false);
-        return $this->error('正在退出中....','/');
+        return $this->success('正在退出中....','/');
     }
 
     /**
@@ -127,6 +127,7 @@ class LoginController extends Controller
         }
             //保存一个数据用来验证用户是否登录
             session('loginHome',true);
+            
             //保存(session)登录用户信息
             session('users',$res);
             return $this->success('登录成功','/');
